@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans:wght@300;400;500;600&family=Noto+Serif+Georgian:wght@400;500;600&family=Noto+Sans+Georgian:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.add('js');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('rm')</script>
 </head>
 <body>
 
@@ -54,6 +55,8 @@
 
 <main>
   <!-- 1. HERO -->
+  <div class="hero-pin" data-pin>
+  <div class="pin-sticky">
   <section class="hero">
     <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg">
       <source src="assets/hero.mp4" type="video/mp4">
@@ -72,24 +75,35 @@
     </div>
     <a href="#why" class="hero__scroll" aria-label="ქვემოთ გადასვლა"><span></span></a>
   </section>
+  </div>
+  </div>
 
-  <!-- 2. WHY US -->
-  <section class="why section" id="why">
+  <!-- 2. WHY US: pinned statement -->
+  <section class="statement" id="why" data-pin>
+    <div class="pin-sticky statement__sticky">
+      <div class="container statement__inner">
+        <p class="eyebrow">ჩვენი ისტორია</p>
+        <h2 class="h2 statement__title">რატომ ჩვენ?</h2>
+        <svg class="sprig"><use href="#sprig"/></svg>
+        <p class="statement__text" data-words>საზღვრიდან 15 კილომეტრში, პატარა სოფელში, დედა საგულდაგულოდ ამზადებს სასაჩუქრე ყუთებს თქვენთვის.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why section">
     <div class="container why__grid">
-      <figure class="why__photo">
-        <picture>
-          <source srcset="assets/box-table.webp" type="image/webp">
-          <img src="assets/box-table.jpg" alt="TAMARISI-ის სასაჩუქრე ყუთი ხის მაგიდაზე: კივი, ფორთოხალი, თხილი და ქლიავის ჩირი" loading="lazy" width="1067" height="1600">
-        </picture>
+      <figure class="why__photo" data-reveal>
+        <div class="why__frame" data-parallax="-0.08">
+          <picture>
+            <source srcset="assets/box-table.webp" type="image/webp">
+            <img src="assets/box-table.jpg" alt="TAMARISI-ის სასაჩუქრე ყუთი ხის მაგიდაზე: კივი, ფორთოხალი, თხილი და ქლიავის ჩირი" loading="lazy" width="1067" height="1600" data-zoom>
+          </picture>
+        </div>
       </figure>
       <div class="why__text">
-        <p class="eyebrow">ჩვენი ისტორია</p>
-        <h2 class="h2">რატომ ჩვენ?</h2>
-        <svg class="sprig"><use href="#sprig"/></svg>
-        <p class="lead">საზღვრიდან 15 კილომეტრში, პატარა სოფელში, დედა საგულდაგულოდ ამზადებს სასაჩუქრე ყუთებს თქვენთვის.</p>
-        <p>ყველა პროდუქტი, რომელიც ყუთში დაგხვდებათ, ჩვენივე ხელებით, სიყვარულითა და ზრუნვით არის მოყვანილი.</p>
-        <p>იმედი გვაქვს, ეს ყუთი სითბოსა და სიხარულის გემოს შემოიტანს ჩვენი ფერმიდან თქვენს სამუშაო სივრცეში.</p>
-        <ul class="why__marks">
+        <p class="lead" data-reveal>ყველა პროდუქტი, რომელიც ყუთში დაგხვდებათ, ჩვენივე ხელებით, სიყვარულითა და ზრუნვით არის მოყვანილი.</p>
+        <p data-reveal>იმედი გვაქვს, ეს ყუთი სითბოსა და სიხარულის გემოს შემოიტანს ჩვენი ფერმიდან თქვენს სამუშაო სივრცეში.</p>
+        <ul class="why__marks" data-stagger>
           <li><svg><use href="#leaf"/></svg>ჩვენივე მოყვანილი</li>
           <li><svg><use href="#leaf"/></svg>ხელით აწყობილი</li>
           <li><svg><use href="#leaf"/></svg>სიყვარულით შეფუთული</li>
@@ -101,13 +115,22 @@
   <!-- 3. PRODUCTS -->
   <section class="products section section--kraft" id="products">
     <div class="container">
-      <div class="section__head">
+      <div class="section__head" data-reveal>
         <p class="eyebrow">პროდუქცია</p>
         <h2 class="h2">რა დაგხვდებათ ყუთში</h2>
         <svg class="sprig"><use href="#sprig"/></svg>
         <p class="section__intro">ყოველი პროდუქტი ჩვენს ფერმაში, ჩვენივე ხელით არის მოყვანილი და მომზადებული.</p>
       </div>
-      <div class="pgrid">
+      <div class="products__layout">
+        <figure class="products__poster" data-reveal>
+          <div class="products__poster-in" data-scale-in>
+            <picture>
+              <source srcset="assets/poster-products.webp" type="image/webp">
+              <img src="assets/poster-products.jpg" alt="TAMARISI-ის საახალწლო ყუთი: კრაფტის ყუთი ყვავილოვანი ტომსიკით, ფორთოხლის ჩირითა და სიროფით, მწვანე ფონზე" loading="lazy" width="1280" height="1600">
+            </picture>
+          </div>
+        </figure>
+      <div class="pgrid" data-stagger>
         <article class="pcard"><div class="pcard__img"><picture><source srcset="assets/p-kiwi.webp" type="image/webp"><img src="assets/p-kiwi.jpg" alt="გამომშრალი კივის ნაჭრები" loading="lazy" width="480" height="480"></picture></div><div class="pcard__body"><span class="pcard__num">01</span><h3>გამომშრალი კივი</h3><p>თხლად დაჭრილი და ნელა გამომშრალი კივი. მომჟავო-ტკბილი გემო და ცოცხალი მწვანე ფერი ზამთარშიც ზაფხულს გაგახსენებთ.</p></div></article>
         <article class="pcard"><div class="pcard__img"><picture><source srcset="assets/p-persimmon.webp" type="image/webp"><img src="assets/p-persimmon.jpg" alt="ხურმის ჩირი" loading="lazy" width="480" height="480"></picture></div><div class="pcard__body"><span class="pcard__num">02</span><h3>ხურმის ჩირი</h3><p>შემოდგომის მწიფე ხურმა, რომელიც ნელა შრება და რბილ, თაფლივით ტკბილ ჩირად იქცევა.</p></div></article>
         <article class="pcard"><div class="pcard__img"><picture><source srcset="assets/p-hazelnut.webp" type="image/webp"><img src="assets/p-hazelnut.jpg" alt="თხილი" loading="lazy" width="480" height="480"></picture></div><div class="pcard__body"><span class="pcard__num">03</span><h3>თხილი</h3><p>ქართული სუფრის ერთგული თანამგზავრი — გემრიელი თხილი, ჩვენივე ხეებიდან შეგროვებული.</p></div></article>
@@ -121,37 +144,38 @@
         <article class="pcard"><div class="pcard__img"><picture><source srcset="assets/p-syrup.webp" type="image/webp"><img src="assets/p-syrup.jpg" alt="სიროფის ბოთლები" loading="lazy" width="480" height="480"></picture></div><div class="pcard__body"><span class="pcard__num">11</span><h3>სიროფი</h3><p>ხილისგან მოხარშული არომატული სიროფი — ჩაისთვის, დესერტებისთვის ან ცივი წყლის გასატკბობად.</p></div></article>
         <article class="pcard pcard--note"><div class="pcard__body"><svg class="pcard__icon"><use href="#i-box"/></svg><h3>თქვენი არჩევანით</h3><p>ყუთის შემადგენლობას თქვენს სურვილს მოვარგებთ.</p><a href="#business" class="link">დაწვრილებით →</a></div></article>
       </div>
+      </div>
     </div>
   </section>
 
   <!-- 3b. GIFT BOXES -->
   <section class="boxes section" id="boxes">
     <div class="container">
-      <div class="section__head">
+      <div class="section__head" data-reveal>
         <p class="eyebrow">სასაჩუქრე ყუთები</p>
         <h2 class="h2">აირჩიეთ საჩუქარი</h2>
         <svg class="sprig"><use href="#sprig"/></svg>
         <p class="section__intro">აირჩიეთ ერთ-ერთი ყუთი ან მოგვწერეთ და ერთად შევადგენთ თქვენთვის სასურველ ნაკრებს.</p>
       </div>
-      <div class="gallery">
+      <div class="gallery" data-stagger>
         <figure class="gitem gitem--wide">
-          <picture><source srcset="assets/box-ribbon.webp" type="image/webp"><img src="assets/box-ribbon.jpg" alt="თეთრი ყუთი მწვანე ლენტით: კივი, ხურმა, თხილი, ფორთოხალი, ქლიავის ჩირი და კაკალი" loading="lazy" width="1536" height="1024"></picture>
+          <picture><source srcset="assets/box-ribbon.webp" type="image/webp"><img data-zoom src="assets/box-ribbon.jpg" alt="თეთრი ყუთი მწვანე ლენტით: კივი, ხურმა, თხილი, ფორთოხალი, ქლიავის ჩირი და კაკალი" loading="lazy" width="1536" height="1024"></picture>
           <figcaption><h3>ყუთი მწვანე ლენტით</h3><p>ხილის ჩირი, თხილი და კაკალი</p></figcaption>
         </figure>
         <figure class="gitem gitem--tall">
-          <picture><source srcset="assets/box-wine.webp" type="image/webp"><img src="assets/box-wine.jpg" alt="დიდი კრაფტის ყუთი საფერავით, ჩირით, სიროფითა და ჩურჩხელით" loading="lazy" width="683" height="1024"></picture>
+          <picture><source srcset="assets/box-wine.webp" type="image/webp"><img data-zoom src="assets/box-wine.jpg" alt="დიდი კრაფტის ყუთი საფერავით, ჩირით, სიროფითა და ჩურჩხელით" loading="lazy" width="683" height="1024"></picture>
           <figcaption><h3>დიდი საზეიმო ყუთი</h3><p>საფერავი, ჩირი, თხილეული, სიროფი და ჩურჩხელა</p></figcaption>
         </figure>
         <figure class="gitem">
-          <picture><source srcset="assets/box-churchkhela.webp" type="image/webp"><img src="assets/box-churchkhela.jpg" alt="კრაფტის ყუთი ოთხი ჩურჩხელითა და ორი ქილით" loading="lazy" width="1024" height="682"></picture>
+          <picture><source srcset="assets/box-churchkhela.webp" type="image/webp"><img data-zoom src="assets/box-churchkhela.jpg" alt="კრაფტის ყუთი ოთხი ჩურჩხელითა და ორი ქილით" loading="lazy" width="1024" height="682"></picture>
           <figcaption><h3>ჩურჩხელის ყუთი</h3><p>ჩურჩხელა და სახლში მოხარშული მურაბა</p></figcaption>
         </figure>
         <figure class="gitem">
-          <picture><source srcset="assets/box-closed.webp" type="image/webp"><img src="assets/box-closed.jpg" alt="დახურული კრაფტის ყუთი მწვანე ყვავილოვანი შეფუთვით, წარწერით TAMARISI HOMEMADE" loading="lazy" width="1536" height="1024"></picture>
+          <picture><source srcset="assets/box-closed.webp" type="image/webp"><img data-zoom src="assets/box-closed.jpg" alt="დახურული კრაფტის ყუთი მწვანე ყვავილოვანი შეფუთვით, წარწერით TAMARISI HOMEMADE" loading="lazy" width="1536" height="1024"></picture>
           <figcaption><h3>ფირმული შეფუთვა</h3><p>საჩუქრად გადასაცემად მზადაა</p></figcaption>
         </figure>
         <figure class="gitem gitem--basket">
-          <picture><source srcset="assets/basket-55.webp" type="image/webp"><img src="assets/basket-55.jpg" alt="პატარა სასაჩუქრე კალათა ფორთოხლის ჩირით, თხილითა და ნაძვის ტოტებით" loading="lazy" width="1217" height="1600"></picture>
+          <picture><source srcset="assets/basket-55.webp" type="image/webp"><img data-zoom src="assets/basket-55.jpg" alt="პატარა სასაჩუქრე კალათა ფორთოხლის ჩირით, თხილითა და ნაძვის ტოტებით" loading="lazy" width="1217" height="1600"></picture>
           <span class="price"><small>ფასი</small>55 ₾</span>
           <figcaption><h3>სასაჩუქრე კალათა, პატარა</h3><p>საახალწლო გაფორმებით</p></figcaption>
         </figure>
@@ -161,19 +185,19 @@
 
   <!-- 4. BUSINESS -->
   <section class="business section section--green" id="business">
-    <svg class="business__orn business__orn--l" aria-hidden="true"><use href="#sprig"/></svg>
+    <svg class="business__orn business__orn--l" aria-hidden="true" data-parallax="0.25"><use href="#sprig"/></svg>
     <div class="container">
-      <div class="section__head section__head--light">
+      <div class="section__head section__head--light" data-reveal>
         <p class="eyebrow eyebrow--light">კომპანიებისთვის</p>
         <h2 class="h2">ინდივიდუალური შეთავაზება კომპანიებისთვის</h2>
         <svg class="sprig sprig--light"><use href="#sprig"/></svg>
       </div>
-      <div class="bgrid">
+      <div class="bgrid" data-stagger>
         <div class="bcard"><svg><use href="#i-tag"/></svg><h3>ბრენდირება</h3><p>შესაძლებელია თითოეული პროდუქტის ბრენდირება თქვენი კომპანიის სტილით.</p></div>
         <div class="bcard"><svg><use href="#i-box"/></svg><h3>შემადგენლობა</h3><p>თითოეული ყუთის შემადგენლობას თქვენი სურვილისამებრ შევცვლით.</p></div>
         <div class="bcard"><svg><use href="#i-team"/></svg><h3>ფასი</h3><p>ფასი დამოკიდებულია თანამშრომლების რაოდენობაზე.</p></div>
       </div>
-      <div class="business__cta">
+      <div class="business__cta" data-reveal>
         <p>მოგვწერეთ და ერთად შევარჩევთ თქვენი გუნდისთვის საუკეთესო ვარიანტს.</p>
         <a href="#contact" class="btn btn--kraft">მიიღეთ შეთავაზება</a>
       </div>
@@ -184,13 +208,13 @@
 <!-- 5. CONTACT -->
 <footer class="contact" id="contact">
   <div class="container">
-    <div class="section__head">
+    <div class="section__head" data-reveal>
       <p class="eyebrow">კონტაქტი</p>
       <h2 class="h2">დაგვიკავშირდით</h2>
       <svg class="sprig"><use href="#sprig"/></svg>
       <p class="section__intro">სიამოვნებით გიპასუხებთ ყველა კითხვაზე და დაგეხმარებით საჩუქრის შერჩევაში.</p>
     </div>
-    <ul class="clist">
+    <ul class="clist" data-stagger>
       <li><a href="tel:+995598631002"><span class="cicon"><svg><use href="#i-phone"/></svg></span><span><small>ტელეფონი</small>+995 598 631 002</span></a></li>
       <li><a href="mailto:tamarisifruit@gmail.com"><span class="cicon"><svg><use href="#i-mail"/></svg></span><span><small>ელფოსტა</small>tamarisifruit<wbr>@gmail.com</span></a></li>
       <li><a href="https://www.facebook.com/share/1Dksxgqnbm/?mibextid=wwXIfr" target="_blank" rel="noopener"><span class="cicon"><svg><use href="#i-fb"/></svg></span><span><small>Facebook</small>TAMARISI</span></a></li>
