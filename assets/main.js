@@ -37,3 +37,16 @@
     requestAnimationFrame(tick);
   })();
 })();
+
+// background music (starts only on button tap)
+(function(){
+  var b=document.querySelector('.music'),a=document.getElementById('bgm');if(!b||!a)return;
+  var target=.35,timer;
+  function fade(to,done){clearInterval(timer);timer=setInterval(function(){var v=a.volume+(to>a.volume?.02:-.03);
+    if((to>a.volume&&v>=to)||(to<=a.volume&&v<=to)){a.volume=Math.max(0,Math.min(1,to));clearInterval(timer);done&&done()}else a.volume=Math.max(0,Math.min(1,v))},60)}
+  function set(on){b.classList.toggle('is-on',on);b.setAttribute('aria-pressed',on);b.setAttribute('aria-label',on?'მუსიკის გამორთვა':'მუსიკის ჩართვა')}
+  b.addEventListener('click',function(){
+    if(a.paused){a.volume=0;var p=a.play();set(true);if(p&&p.catch)p.catch(function(){set(false)});fade(target)}
+    else{set(false);fade(0,function(){a.pause()})}
+  });
+})();

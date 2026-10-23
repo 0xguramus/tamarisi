@@ -190,3 +190,27 @@ ul{list-style:none}
   .reveal{opacity:1;transform:none}
 }
 .why__photo img{aspect-ratio:1199/1498;object-fit:cover;background:#174d32}
+/* ===== festive details ===== */
+.deco{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.deco--hero{z-index:1}
+.bb{position:absolute;top:0;width:32px;overflow:visible;transform-origin:50% 0;animation:sway 6s ease-in-out infinite alternate}
+.bb--sm{width:24px}
+.bb--red{color:#b3261e}.bb--gold{color:#cfa654}.bb--green{color:#3d4a2f}
+.sp{position:absolute;width:12px;height:12px;color:#d4b06a;opacity:.75;animation:twinkle 3.6s ease-in-out infinite}
+.sp--s{width:8px;height:8px}
+.deco--hero .sp{color:#f3e3b8}
+.section--green .sp{color:#e2c58a}
+.garland{position:absolute;top:0;left:0;width:100%;height:28px}
+@keyframes sway{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
+@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:.85;transform:scale(1)}}
+.music{position:fixed;right:18px;bottom:18px;z-index:60;width:48px;height:48px;border-radius:50%;border:1px solid rgba(200,162,122,.6);background:rgba(44,54,34,.88);color:#faf6ef;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 24px -10px rgba(0,0,0,.5);backdrop-filter:blur(6px);transition:transform .2s,background .2s}
+.music:hover{transform:scale(1.06)}
+.music:focus-visible{outline:2px solid #cfa654;outline-offset:3px}
+.music svg{width:20px;height:20px}
+.music__eq{display:none;gap:2px;align-items:flex-end;height:14px}
+.music__eq i{width:3px;background:#cfa654;border-radius:1px;animation:eq 1s ease-in-out infinite}
+.music__eq i:nth-child(2){animation-delay:-.4s}.music__eq i:nth-child(3){animation-delay:-.7s}
+.music.is-on svg{display:none}.music.is-on .music__eq{display:flex}
+@keyframes eq{0%,100%{height:4px}50%{height:14px}}
+@media (max-width:860px){.bb{width:24px}.bb--sm,.deco--hero .sp--s{display:none}.deco:not(.deco--hero) .bb{height:80px!important}.deco:not(.deco--hero) .sp{display:none}.music{right:14px;bottom:14px;width:44px;height:44px}}
+@media (prefers-reduced-motion:reduce){.bb,.sp,.music__eq i{animation:none}.music__eq i{height:10px}}
